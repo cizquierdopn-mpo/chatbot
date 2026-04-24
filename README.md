@@ -24,7 +24,6 @@ git checkout -b feature/nombre-de-la-feature
 # Ejemplo real:
 git checkout -b feature/mejora-documentacion
 
-
 ---
 
 ## Paso 2: Docker (Dockerfile)
@@ -61,3 +60,33 @@ ENV PYTHONUNBUFFERED=1
 # Comando de inicio
 CMD ["python", "src/app.py"]
 
+# Chatbot API con Docker
+
+---
+
+API REST de chatbot desarrollada en Flask, contenerizada con Docker y 
+orquestada con Docker Compose.
+
+## Descripcion
+
+Aplicacion web que permite interactuar con un chatbot básico via navegador.
+Almacena el historial de conversaciones en JSON.
+
+**Características:**
+- Interfaz web responsive
+- API REST con endpoints /api/chat y /api/history
+- Persistencia de datos en volumen Docker
+- Hot-reload para desarrollo
+
+## Instalacion y Despliegue
+
+### Prerrequisitos
+- Docker y Docker Compose instalados
+- Git
+
+### Paso a paso
+
+1. **Clonar repositorio**
+```bash
+git clone https://github.com/tu-usuario/chatbot-docker.git
+cd chatbot-docker
