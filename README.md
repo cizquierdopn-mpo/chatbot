@@ -65,26 +65,27 @@ CMD ["python", "app.py"]    				# Comando que se ejecuta al iniciar el contenedo
 
 ### docker-compose.yml
 
-version: '3.8'
+	```yaml
+	version: '3.8'
 
-services:
-  chatbot:
-    build: .                          # Construye la imagen desde el Dockerfile local
-    container_name: chatbot-app       # Nombre fácil de recordar para el contenedor
-    ports:
-      - "5000:5000"                   # Mapea puerto 5000 del host → 5000 del contenedor
-    volumes:
-      - ./data:/app/data              # Volumen bind: carpeta local data/ → /app/data en contenedor
-      - .:/app                         # Volumen para hot-reload en desarrollo
-    environment:
-      - FLASK_ENV=development
-      - FLASK_DEBUG=1
-    restart: unless-stopped           # Reinicia automáticamente si falla, excepto si se detiene manualmente
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+	services:
+  		chatbot:
+		    build: .                          # Construye la imagen desde el Dockerfile local
+		    container_name: chatbot-app       # Nombre fácil de recordar para el contenedor
+		    ports:
+		      - "5000:5000"                   # Mapea puerto 5000 del host → 5000 del contenedor
+		    volumes:
+		      - ./data:/app/data              # Volumen bind: carpeta local data/ → /app/data en contenedor
+		      - .:/app                         # Volumen para hot-reload en desarrollo
+		    environment:
+		      - FLASK_ENV=development
+		      - FLASK_DEBUG=1
+		    restart: unless-stopped           # Reinicia automáticamente si falla, excepto si se detiene manualmente
+		    healthcheck:
+		      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+		      interval: 30s
+		      timeout: 10s
+		      retries: 3
 
 **Puntos Clave**
 
