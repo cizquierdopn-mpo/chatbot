@@ -21,10 +21,10 @@ Expone el historial completo a través del endpoint /api/history.
 
  **Funcionamiento**
 
-1.- El usuario accede a la aplicación web en el navegador o envía una petición POST a /api/chat.
-2.- Flask recibe el mensaje, lo procesa con la lógica del chatbot y genera una respuesta.
-3.- La conversación se registra en data/conversaciones.json.
-4.- Docker Compose levanta el servicio, mapea el puerto 5000 y monta un volumen para persistir los datos fuera del contenedor.
+1. El usuario accede a la aplicación web en el navegador o envía una petición POST a /api/chat.
+2. Flask recibe el mensaje, lo procesa con la lógica del chatbot y genera una respuesta.
+3. La conversación se registra en data/conversaciones.json.
+4. Docker Compose levanta el servicio, mapea el puerto 5000 y monta un volumen para persistir los datos fuera del contenedor.
 
 ## Instlacion y Despliegue
 
@@ -37,10 +37,10 @@ Expone el historial completo a través del endpoint /api/history.
 ### Paso a paso
 
 1. Clonar repositorio
-2. Contruir la imagen con Docker
-3. Levantar los servicios con Docker Compose
-4. Acceder a la app
-5. Ver los logs (si necesario)
+1. Contruir la imagen con Docker
+1. Levantar los servicios con Docker Compose
+1. Acceder a la app
+1. Ver los logs (si necesario)
 
 ## Explicacion de los archivos Docker
 
