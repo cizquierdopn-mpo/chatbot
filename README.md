@@ -59,9 +59,9 @@ CMD ["python", "app.py"]    				# Comando que se ejecuta al iniciar el contenedo
 
 **Decisiones clave**
 
-1.- python:3.11-slim: Imagen reducida (~45 MB vs ~900 MB de la imagen completa), ideal para producción y transferencias rápidas.
-2.- --no-cache-dir: Evita almacenar caché de pip, reduciendo el tamaño final de la imagen.
-3.- Copiar requirements.txt antes que app.py: Si solo cambia el código, Docker reutiliza la capa de instalación de dependencias, acelerando builds posteriores.
+1. python:3.11-slim: Imagen reducida (~45 MB vs ~900 MB de la imagen completa), ideal para producción y transferencias rápidas.
+2. --no-cache-dir: Evita almacenar caché de pip, reduciendo el tamaño final de la imagen.
+3. Copiar requirements.txt antes que app.py: Si solo cambia el código, Docker reutiliza la capa de instalación de dependencias, acelerando builds posteriores.
 
 ### docker-compose.yml
 
@@ -88,10 +88,10 @@ services:
 
 **Puntos Clave**
 
-1.- ports: "5000:5000": Expone la aplicación para que sea accesible desde fuera del contenedor (navegador, curl, etc.).
-2.- volumes: ./data:/app/data: Garantiza que conversaciones.json se guarde en el disco del host. Si el contenedor se destruye, los datos permanecen.
-3.- volumes: .:/app: Permite el hot-reload: cualquier cambio en el código local se refleja inmediatamente en el contenedor sin reconstruir la imagen.
-4.- healthcheck: Docker verifica cada 30 segundos que la app responda correctamente. Si falla 3 veces seguidas, marca el contenedor como unhealthy.
+1. ports: "5000:5000": Expone la aplicación para que sea accesible desde fuera del contenedor (navegador, curl, etc.).
+2. volumes: ./data:/app/data: Garantiza que conversaciones.json se guarde en el disco del host. Si el contenedor se destruye, los datos permanecen.
+3. volumes: .:/app: Permite el hot-reload: cualquier cambio en el código local se refleja inmediatamente en el contenedor sin reconstruir la imagen.
+4. healthcheck: Docker verifica cada 30 segundos que la app responda correctamente. Si falla 3 veces seguidas, marca el contenedor como unhealthy.
 
 
 
@@ -134,8 +134,8 @@ Este repositorio sigue un flujo de trabajo basado en **Git Flow simplificado**, 
 
 **Estructura de ramas**
 
-1.- **main** Código estable y listo para el entorno productivo
-2.- **develop** Rama de integracion donde se fusionan nuevas funcionalidades antes de pasar a main (entorno productivo)
-3.- **feature/** Ramas temporales para cada nueva funcionalidad o correcion
+1. **main** Código estable y listo para el entorno productivo
+2. **develop** Rama de integracion donde se fusionan nuevas funcionalidades antes de pasar a main (entorno productivo)
+3. **feature/** Ramas temporales para cada nueva funcionalidad o correcion
 
 
