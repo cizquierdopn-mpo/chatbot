@@ -46,16 +46,18 @@ Expone el historial completo a través del endpoint /api/history.
 
 ### Dockerfile
 
-FROM python:3.11-slim       				# Imagen base ligera de Python 3.11
-WORKDIR /app                				# Directorio de trabajo dentro del contenedor
-COPY requirements.txt .     				# Copiamos dependencias primero (optimiza caché)
-RUN pip install --no-cache-dir -r requirements.txt  	# Instalamos Flask
-COPY app.py .               				# Copiamos el código fuente
-RUN mkdir -p /app/data      				# Creamos carpeta para datos persistentes
-EXPOSE 5000                 				# Declaramos que el contenedor escucha en el puerto 5000
-ENV FLASK_APP=app.py        				# Variable de entorno para Flask
-ENV PYTHONUNBUFFERED=1      				# Evita buffering en logs para verlos en tiempo real
-CMD ["python", "app.py"]    				# Comando que se ejecuta al iniciar el contenedor
+	```Dockerfile
+
+	FROM python:3.11-slim       				# Imagen base ligera de Python 3.11
+	WORKDIR /app                				# Directorio de trabajo dentro del contenedor
+	COPY requirements.txt .     				# Copiamos dependencias primero (optimiza caché)
+	RUN pip install --no-cache-dir -r requirements.txt  	# Instalamos Flask
+	COPY app.py .               				# Copiamos el código fuente
+	RUN mkdir -p /app/data      				# Creamos carpeta para datos persistentes
+	EXPOSE 5000                 				# Declaramos que el contenedor escucha en el puerto 5000
+	ENV FLASK_APP=app.py        				# Variable de entorno para Flask
+	ENV PYTHONUNBUFFERED=1      				# Evita buffering en logs para verlos en tiempo real
+	CMD ["python", "app.py"]    				# Comando que se ejecuta al iniciar el contenedor
 
 **Decisiones clave**
 
