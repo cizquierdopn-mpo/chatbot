@@ -139,6 +139,6 @@ Este repositorio sigue un flujo de trabajo basado en **Git Flow simplificado**, 
 
 1. **main** Código estable y listo para el entorno productivo
 2. **develop** Rama de integracion donde se fusionan nuevas funcionalidades antes de pasar a main (entorno productivo)
-3. **feature/** Ramas temporales para cada nueva funcionalidad o correcion
+3. **feature/lo_que_sea** Ramas temporales para cada nueva funcionalidad o correcion
 
 
